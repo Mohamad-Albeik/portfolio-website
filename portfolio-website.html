@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohamad Malek Albeik - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #e0e0e0;
+            background: #0f1419;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(20, 25, 30, 0.98);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            border-bottom: 1px solid #1a2332;
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #60a5fa;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #b0b0b0;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #60a5fa;
+        }
+
+        /* Hero Section */
+        .hero {
+             background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('background.jpg') center/cover no-repeat;
+            position: relative;
+
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+            background-attachment: fixed;
+        }
+
+        .hero .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .profile-photo {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+            margin: 0 auto 2rem;
+            box-shadow: 0 10px 30px rgba(96, 165, 250, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: #0f1419;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero .location {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+
+        .hero .tagline {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: #60a5fa;
+            color: #0f1419;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(96, 165, 250, 0.4);
+            background: #3b82f6;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid #60a5fa;
+        }
+
+        .btn-secondary:hover {
+            background: #60a5fa;
+            color: #0f1419;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            color: #60a5fa;
+            margin-bottom: 3rem;
+            text-align: center;
+            position: relative;
+        }
+
+        section h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: #60a5fa;
+            margin: 1rem auto;
+            border-radius: 2px;
+        }
+
+        /* Card Styles */
+        .card {
+            background: #1a2332;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            transition: all 0.3s;
+            margin-bottom: 2rem;
+            border: 1px solid #2a3647;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(96, 165, 250, 0.2);
+            border-color: #60a5fa;
+        }
+
+        /* About Section */
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #b0b0b0;
+            margin-bottom: 1.5rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .skill-item {
+            background: #1a2332;
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+            color: #60a5fa;
+            font-weight: 600;
+            border: 1px solid #2a3647;
+            transition: all 0.3s;
+        }
+
+        .skill-item:hover {
+            border-color: #60a5fa;
+            transform: translateY(-3px);
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 50px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: #60a5fa;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -37px;
+            top: 0;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: #60a5fa;
+            border: 3px solid #0f1419;
+            box-shadow: 0 0 0 3px #60a5fa;
+        }
+
+        .timeline-content h3 {
+            color: #60a5fa;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content .company {
+            font-weight: 600;
+            color: #b0b0b0;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content .date {
+            color: #808080;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-content ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .timeline-content li {
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+            position: relative;
+            color: #b0b0b0;
+        }
+
+        .timeline-content li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #60a5fa;
+        }
+
+        /* Education Grid */
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .education-card {
+            background: #1a2332;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            border-left: 5px solid #60a5fa;
+            transition: all 0.3s;
+        }
+
+        .education-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(96, 165, 250, 0.2);
+        }
+
+        .education-card h3 {
+            color: #60a5fa;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-card .degree {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #e0e0e0;
+        }
+
+        .education-card .year {
+            color: #808080;
+        }
+
+        /* Certificates Grid */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .cert-card {
+            background: #1a2332;
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            transition: all 0.3s;
+            border: 1px solid #2a3647;
+        }
+
+        .cert-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(96, 165, 250, 0.2);
+            border-color: #60a5fa;
+        }
+
+        .cert-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .cert-card h3 {
+            color: #60a5fa;
+            margin-bottom: 1rem;
+        }
+
+        .cert-card p {
+            color: #b0b0b0;
+        }
+
+        /* Sports Section */
+        .sports-section {
+            background: linear-gradient(135deg, rgba(96, 165, 250, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%);
+            padding: 4rem 2rem;
+            border-radius: 30px;
+            text-align: center;
+            border: 1px solid #2a3647;
+        }
+
+        .sports-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .sports-icon {
+            font-size: 5rem;
+            color: #60a5fa;
+            margin-bottom: 1rem;
+        }
+
+        /* Languages */
+        .languages-grid {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .language-card {
+            background: #1a2332;
+            padding: 2rem 3rem;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            text-align: center;
+            min-width: 200px;
+            border: 1px solid #2a3647;
+            transition: all 0.3s;
+        }
+
+        .language-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(96, 165, 250, 0.2);
+            border-color: #60a5fa;
+        }
+
+        .language-card .flag {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .language-card h3 {
+            color: #60a5fa;
+            margin-bottom: 0.5rem;
+        }
+
+        .language-card p {
+            color: #b0b0b0;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .contact-info {
+            background: #1a2332;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            border: 1px solid #2a3647;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: #0f1419;
+            border-radius: 10px;
+            transition: all 0.3s;
+            border: 1px solid #2a3647;
+        }
+
+        .contact-item:hover {
+            background: #1a2332;
+            border-color: #60a5fa;
+        }
+
+        .contact-item i {
+            color: #60a5fa;
+            font-size: 1.5rem;
+        }
+
+        .contact-item a {
+            color: #b0b0b0;
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            color: #60a5fa;
+        }
+
+        .contact-form {
+            background: #1a2332;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            border: 1px solid #2a3647;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #60a5fa;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #2a3647;
+            border-radius: 10px;
+            font-family: inherit;
+            transition: border-color 0.3s;
+            background: #0f1419;
+            color: #e0e0e0;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #60a5fa;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            background: #60a5fa;
+            color: #0f1419;
+            padding: 1rem 3rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: #3b82f6;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(96, 165, 250, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            background: #1a2332;
+            color: #b0b0b0;
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid #2a3647;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav .container {
+                /* Force logo and links to stack */
+                flex-direction: column; 
+                gap: 0.5rem; 
+                padding: 0.5rem 1rem;
+            }
+            nav ul {
+                /* Ensure links use full width to center them */
+                width: 100%; 
+                justify-content: center;
+                gap: 0.8rem;
+                font-size: 0.85rem; /* Make links slightly smaller */
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .tagline {
+                font-size: 1rem;
+            }
+
+            section {
+                padding: 3rem 1rem;
+            }
+
+            section h2 {
+                font-size: 2rem;
+            }
+
+            .timeline {
+                padding-left: 30px;
+            }
+
+            .timeline::before {
+                left: 10px;
+            }
+
+            .timeline-item::before {
+                left: -27px;
+            }
+        }
+        /* Extra Small Screen Fix (Mobile Buttons Stack) */
+        @media (max-width: 480px) {
+            .hero-buttons {
+                /* Force buttons to stack cleanly */
+                flex-direction: column; 
+                align-items: stretch;
+                gap: 0.5rem;
+            }
+            .hero-buttons a.btn {
+                /* Make each button fill the width */
+                width: 100%; 
+                text-align: center;
+                justify-content: center;
+                padding: 0.8rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">MA</div>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="profile-photo">
+                                <img src="my-photo.png" alt="Mohamad Malek Albeik" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+            </div>
+            <h1>Mohamad Malek Albeik</h1>
+            <p class="location"><i class="fas fa-map-marker-alt"></i> Dublin, Ireland</p>
+            <p class="tagline">Multilingual Professional | Tech Specialist | Lifelong Learner | Runner</p>
+            <div class="hero-buttons">
+                <a href="Mohamad-Albeik-CV.pdf" download class="btn btn-secondary"><i class="fas fa-download"></i> Download CV</a>
+                <a href="https://linktr.ee/mohamad.albeik" target="_blank" class="btn btn-secondary"><i class="fas fa-link"></i> All My Links</a>                
+                <a href="https://linkedin.com/in/mohamad-malek-albeik" target="_blank" class="btn btn-secondary"><i class="fab fa-linkedin"></i> LinkedIn Profile</a>
+                <a href="https://github.com/Mohamad-Albeik?tab=projects" target="_blank" class="btn btn-secondary"><i class="fab fa-github"></i> GitHub Projects</a>
+                <a href="#contact" class="btn btn-secondary"><i class="fas fa-envelope"></i> Contact Me</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="about-content">
+            <p>I'm a highly motivated and multilingual professional with over five years of experience working with global tech companies in Ireland.<br> I have a strong ability to analyze information, ensure policy compliance, and streamline processes.<br> My adaptability and commitment to continuous learning drive me to excel in every environment.</p>
+            <p>With a keen analytical mindset and exceptional problem-solving abilities, I thrive in dynamic technology environments.<br> My passion for technology and personal development continuously pushes me to expand my skills and embrace new challenges with enthusiasm and dedication.</p>
+            
+            <div class="skills-grid">
+                <div class="skill-item"><i class="fas fa-brain"></i><br>Analytical Thinking</div>
+                <div class="skill-item"><i class="fas fa-cogs"></i><br>Process Optimization</div>
+                <div class="skill-item"><i class="fas fa-users"></i><br>Team Collaboration</div>
+                <div class="skill-item"><i class="fas fa-language"></i><br>Multilingual</div>
+                <div class="skill-item"><i class="fas fa-laptop-code"></i><br>Tech Proficiency</div>
+                <div class="skill-item"><i class="fas fa-chart-line"></i><br>Continuous Learning</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Experience -->
+    <section id="experience">
+        <h2>Work Experience</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content card">
+                    <h3>Senior Process Executive</h3>
+                    <p class="company">Cognizant / Meta</p>
+                    <p class="date">July 2022 – August 2024</p>
+                    <ul>
+                        <li>Streamlined and optimized workflows for accuracy and efficiency</li>
+                        <li>Led process improvement initiatives to enhance resource utilization</li>
+                        <li>Provided peer support and training on process systems</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content card">
+                    <h3>Localization QA Gaming Tester (Arabic)</h3>
+                    <p class="company">Keywords Studios</p>
+                    <p class="date">April 2021 – July 2022</p>
+                    <ul>
+                        <li>Tested Arabic localization in games for accuracy and cultural consistency</li>
+                        <li>Reported language and syntax issues to clients</li>
+                        <li>Ensured full audio-text alignment in gaming content</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content card">
+                    <h3>Trust & Safety Machine Learning Specialist</h3>
+                    <p class="company">Accenture / YouTube</p>
+                    <p class="date">September 2019 – December 2019</p>
+                    <ul>
+                        <li>Reviewed and categorized content to train machine learning systems</li>
+                        <li>Acted as a language specialist for Arabic and multilingual tasks</li>
+                        <li>Supported onboarding and training for new joiners</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content card">
+                    <h3>Content Review Trust and Safety</h3>
+                    <p class="company">Hays / YouTube</p>
+                    <p class="date">October 2017 – September 2019</p>
+                    <ul>
+                        <li>Reviewed flagged video content for policy compliance</li>
+                        <li>Ensured high-quality decisions and timely workflow completion</li>
+                        <li>Supported various workflow processes and client needs</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education">
+        <h2>Education</h2>
+        <div class="education-grid">
+            <div class="education-card">
+                <h3>CCT College Dublin</h3>
+                <p class="degree">Diploma in Networking and Systems Security</p>
+                <p>QQI Level 7</p>
+                <p class="year">2024 – 2025</p>
+            </div>
+            <div class="education-card">
+                <h3>Dublin Business School</h3>
+                <p class="degree">Certificate in Business and Digital Skills</p>
+                <p>QQI Level 6</p>
+                <p class="year">2021 – 2022</p>
+            </div>
+        </div>
+    </section>
+<!-- Projects & Portfolio -->
+        
+<section id="projects">
+        <h2>Projects & Portfolio</h2>
+        <div class="card" style="text-align: center;">
+            <div class="cert-icon" style="color: #60a5fa; font-size: 4rem;">
+                <i class="fas fa-microchip"></i>
+            </div>
+            <h3 style="color: #60a5fa; margin-bottom: 1rem;">Networking & Systems Security Demos</h3>
+            <p style="font-size: 1.1rem; color: #b0b0b0; margin-bottom: 2rem;">
+                I actively apply the skills gained from my Diploma in Networking and Systems Security through hands-on projects, labs, and concept demonstrations. 
+                <br>These projects showcase my technical proficiency in areas like network configuration, security protocols, and system maintenance.
+            </p>
+          <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1rem; flex-wrap: wrap;">
+                <a href="https://github.com/Mohamad-Albeik?tab=projects" target="_blank" class="btn btn-secondary">
+                    <i class="fab fa-github"></i> View Projects on GitHub
+                </a>
+                <a href="https://linkedin.com/in/mohamad-malek-albeik" target="_blank" class="btn btn-secondary">
+                    <i class="fab fa-linkedin"></i> View Projects on LinkedIn
+                </a>
+            </div>
+            <p style="margin-top: 1rem; font-size: 0.9rem; color: #808080;">
+                (Regular posts and code snippets are shared on these platforms.)
+            </p>
+        </div>
+    </section>
+
+    <!-- Certificates -->
+    <section>
+        <h2>Certificates & Learning</h2>
+        <div class="cert-grid">
+            <div class="cert-card">
+                <div class="cert-icon" style="color: #a435f0;">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h3>Udemy</h3>
+                <p>Technology and Professional Development Courses</p>
+            </div>
+            <div class="cert-card">
+                <div class="cert-icon" style="color: #0077b5;">
+                    <i class="fab fa-linkedin"></i>
+                </div>
+                <h3>LinkedIn Learning</h3>
+                <p>Business, Digital Skills, and Communication</p>
+            </div>
+            <div class="cert-card">
+                <div class="cert-icon" style="color: #60a5fa;">
+                    <i class="fas fa-award"></i> </div>
+                <h3>QQI qualification</h3>
+                <p>Diplomas and Accredited Certificates</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sports & Interests -->
+    <section>
+        <h2>Beyond Work</h2>
+        <div class="sports-section">
+            <div class="sports-content">
+                <div class="sports-icon">
+                    <i class="fas fa-running"></i>
+                </div>
+                <h3 style="color: #60a5fa; font-size: 2rem; margin-bottom: 1rem;">Running Enthusiast</h3>
+                <p style="font-size: 1.1rem; color: #b0b0b0; margin-bottom: 2rem;">Running is more than just a hobby – it's a lifestyle that brings balance, clarity, and discipline to my daily routine. <br><br> I actively participate in local runs and continuously work towards personal fitness goals, finding joy in the challenge and the community that running provides.</p>
+                
+                <div style="margin: 2rem 0;">
+                    <img src="my-running-photo.jpg" alt="Running" style="max-width: 100%; height: auto; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.3); margin-bottom: 2rem;">
+                </div>
+                
+                <a style="display:inline-block;background-color:#FC5200;color:#fff;padding:12px 24px 12px 50px;font-size:16px;font-family:'Segoe UI', Helvetica, Arial, sans-serif;white-space:nowrap;text-decoration:none;background-repeat:no-repeat;background-position:15px center;border-radius:50px;background-image:url('https://badges.strava.com/logo-strava-echelon.png');background-size:25px;transition:all 0.3s;font-weight:600;box-shadow:0 5px 15px rgba(252, 82, 0, 0.3);" href='https://strava.com/athletes/125322076' target="_blank" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 10px 25px rgba(252, 82, 0, 0.4)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 5px 15px rgba(252, 82, 0, 0.3)'">
+                    Follow me on
+                    <img src='https://badges.strava.com/logo-strava.png' alt='Strava' style='margin-left:5px;vertical-align:middle' height=18 width=70 />
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Languages -->
+    <section>
+        <h2>Languages</h2>
+        <div class="languages-grid">
+            <div class="language-card">
+                <div class="flag">AR</div>
+                <h3>Arabic</h3>
+                <p>Native</p>
+            </div>
+            <div class="language-card">
+                <div class="flag">EN</div>
+                <h3>English</h3>
+                <p>Fluent</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+        <h2>Contact</h2>
+        <div class="contact-grid">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    <div>
+                        <strong>LinkedIn</strong><br>
+                        <a href="https://linkedin.com/in/mohamad-malek-albeik" target="_blank">linkedin.com/in/mohamad-malek-albeik</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <strong>Email</strong><br>
+                        <a href="mailto:mohamad-albeik@outlook.com">mohamad-albeik@outlook.com</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-users"></i>
+                    <div>
+                        <strong>Microsoft Teams</strong><br>
+                        <a href="https://teams.microsoft.com/l/chat/0/0?users=mohamad-albeik@outlook.com">Send Message via Teams</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-form">
+                <form action="https://formspree.io/f/xnnojeva" method="POST">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Mohamad Malek Albeik</p>
+        <p>Built with passion and continuous learning.</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+    
+
+        // Add scroll animation effect
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.card, .education-card, .cert-card, .language-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
