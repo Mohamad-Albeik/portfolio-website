@@ -934,5 +934,42 @@
             observer.observe(el);
         });
     </script>
+    <script>
+        // --- NEW AJAX FORM SUBMISSION SCRIPT ---
+        const form = document.getElementById('contactForm');
+        const successMessage = document.getElementById('successMessage');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); // Stop the browser from leaving the page
+            
+            const data = new FormData(event.target);
+            
+            // Note: We use the same Formspree ID as in the HTML
+            fetch("https://formspree.io/f/xnnojeva", { 
+                method: 'POST',
+                body: data,
+                headers: {
+                    'Accept': 'application/json' // Essential for Formspree to return a JSON response instead of redirecting
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Submission successful: Hide form, show success message
+                    form.style.display = 'none';
+                    successMessage.style.display = 'block';
+                } else {
+                    // Submission failed (e.g., Formspree error)
+                    alert('Oops! There was a problem submitting your form. Please try again.');
+                }
+            })
+            .catch(error => {
+                // Network error
+                alert('Oops! A network error occurred.');
+            });
+        });
+    </script>
+</body>
+</html>
+
 </body>
 </html>
