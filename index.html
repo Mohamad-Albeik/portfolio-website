@@ -876,8 +876,8 @@
                 </div>
             </div>
             
-       <div class="contact-form">
-                <form action="https://formspree.io/f/xnnojeva" method="POST" target="_self">
+      <div class="contact-form">
+                <form id="contactForm" action="https://formspree.io/f/xnnojeva" method="POST" target="_self">
                     <input type="hidden" name="_next" value="https://formspree.io/thanks" /> 
                     
                     <div class="form-group">
@@ -894,6 +894,13 @@
                     </div>
                     <button type="submit" class="submit-btn">Send Message</button>
                 </form>
+
+                <!-- Success Message -->
+                <div id="successMessage" style="display:none; text-align:center; padding:2rem; background:#1a2332; border-radius:20px; margin-top:2rem;">
+                    <i class="fas fa-check-circle" style="font-size:3rem; color:#60a5fa;"></i>
+                    <h3 style="color:#60a5fa; margin:1rem 0;">Thank you!</h3>
+                    <p style="color:#b0b0b0;">Your message has been sent successfully. I'll get back to you soon!</p>
+                </div>
             </div>
     </section>
 
