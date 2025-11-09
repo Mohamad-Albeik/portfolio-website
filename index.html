@@ -931,6 +931,44 @@
     </footer>
 
    <script>
+       // ===== SOUND EFFECTS =====
+        // Load sound files
+        const hoverSound = new Audio('hover-sound.mp3');
+        const clickSound = new Audio('click-sound.mp3');
+        
+        // Set volume levels (0.0 = silent, 1.0 = full volume)
+        hoverSound.volume = 0.2; // Quiet hover sound
+        clickSound.volume = 0.4; // Louder click sound
+
+        // Add hover sound to all buttons and interactive elements
+        document.addEventListener('DOMContentLoaded', function() {
+            // Select ALL interactive elements including nav links, buttons, skill items, cards, and Strava button
+            const interactiveElements = document.querySelectorAll(
+                '.btn, .btn-primary, .btn-secondary, .submit-btn, nav a, .skill-item, .card, .education-card, .cert-card, .language-card, .contact-item, a[href*="strava.com"]'
+            );
+            
+            interactiveElements.forEach(element => {
+                // Hover effect
+                element.addEventListener('mouseenter', function() {
+                    hoverSound.currentTime = 0; // Reset to start
+                    hoverSound.play().catch(e => console.log('Hover sound failed'));
+                });
+                
+                // Click effect (only for buttons and links)
+                if (element.classList.contains('btn') || 
+                    element.classList.contains('btn-primary') || 
+                    element.classList.contains('btn-secondary') || 
+                    element.classList.contains('submit-btn') ||
+                    element.tagName === 'A') {
+                    element.addEventListener('click', function() {
+                        clickSound.currentTime = 0;
+                        clickSound.play().catch(e => console.log('Click sound failed'));
+                    });
+                }
+            });
+        });
+        // ===== END SOUND EFFECTS =====
+       
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
