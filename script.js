@@ -1,5 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
     
+    // --- Automatic Copyright Year ---
+    const copyrightElement = document.getElementById('copyright');
+    if (copyrightElement) {
+        const currentYear = new Date().getFullYear();
+        copyrightElement.innerHTML = `&copy; ${currentYear} Mohamad Malek Albeik`;
+    }
+    
     // --- SOUND EFFECTS ---
     // Load sound files (Note: you must have these files in the same directory)
     const hoverSound = new Audio('hover-sound.mp3');
