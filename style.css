@@ -35,6 +35,16 @@ nav .logo {
     font-size: 1.5rem;
     font-weight: 700;
     color: #60a5fa;
+    /* Suggestions for a more stylized logo block */
+    background: #1a2332;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border: 1px solid #2a3647;
+    transition: all 0.3s ease;
 }
 
 nav ul {
@@ -52,6 +62,15 @@ nav a {
 
 nav a:hover {
     color: #60a5fa;
+}
+
+/* Added hover effect for the new logo style */
+nav .logo:hover {
+    background: #60a5fa;
+    color: #0f1419;
+    border-color: #60a5fa;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(96, 165, 250, 0.3);
 }
 
 /* Hero Section */
