@@ -11,7 +11,8 @@ This is my personal portfolio website, built from scratch to showcase my skills,
 
 ## ✨ Features
 
-This portfolio is more than just a static page. It includes several features designed to create a polished and engaging user experience:
+This portfolio is more than just a static page. 
+It includes several features designed to create a polished and engaging user experience:
 
 - **Modern & Responsive Design:** Built with CSS Flexbox and Grid, the layout adapts beautifully to all screen sizes, from mobile phones to widescreen desktops.
 - **Interactive UI with Sound:** Subtle hover and click sound effects are implemented using JavaScript for a unique and responsive feel.
@@ -64,6 +65,7 @@ Mohamad Malek Albeik
 ---
 
 *This project was built with passion and continuous learning.*
+
 
 
 
