@@ -26,9 +26,9 @@
     <video autoplay muted loop playsinline class="hero-video">
         <source src="your-video.mp4" type="video/mp4">
     </video>
-    <div class="container" style="position: relative; z-index: 1;">
+    <div class="container">
             <div class="profile-photo">
-                                <img src="my-photo.png" alt="Mohamad Malek Albeik" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                <img src="my-photo.png" alt="Mohamad Malek Albeik">
             </div>
             <h1>Mohamad Malek Albeik</h1>
             <p class="location"><i class="fas fa-map-marker-alt"></i> Dublin, Ireland</p>
@@ -144,16 +144,16 @@
     </section>
 <section id="projects">
         <h2>Projects & Portfolio</h2>
-        <div class="card" style="text-align: center;">
-            <div class="cert-icon" style="color: #60a5fa; font-size: 4rem;">
+        <div class="card project-card-content">
+            <div class="cert-icon project-icon">
                 <i class="fas fa-microchip"></i>
             </div>
-            <h3 style="color: #60a5fa; margin-bottom: 1rem;">Networking & Systems Security Demos</h3>
-            <p style="font-size: 1.1rem; color: #b0b0b0; margin-bottom: 2rem;">
+            <h3>Networking & Systems Security Demos</h3>
+            <p class="project-desc">
                 With a strong foundation in network, IT, and security skills, I also possess solid coding abilities, showcased through my portfolio website. 
                 <br>Additionally, I maintain a home lab server running Pi-hole, further demonstrating my practical expertise.
             </p>
-          <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1rem; flex-wrap: wrap;">
+          <div class="project-links">
                 <a href="https://github.com/Mohamad-Albeik?tab=projects" target="_blank" class="btn btn-secondary">
                     <i class="fab fa-github"></i> View Projects on GitHub
                 </a>
@@ -161,7 +161,7 @@
                     <i class="fab fa-linkedin"></i> View Projects on LinkedIn
                 </a>
             </div>
-            <p style="margin-top: 1rem; font-size: 0.9rem; color: #808080;">
+            <p class="project-note">
                 (Regular posts and code snippets are shared on these platforms.)
             </p>
         </div>
@@ -207,7 +207,7 @@
                     <img src="my-running-photo.jpg" alt="Running" style="max-width: 100%; height: auto; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.3); margin-bottom: 2rem;">
                 </div>
                 
-                <a style="display:inline-block;background-color:#FC5200;color:#fff;padding:12px 24px 12px 50px;font-size:16px;font-family:'Segoe UI', Helvetica, Arial, sans-serif;white-space:nowrap;text-decoration:none;background-repeat:no-repeat;background-position:15px center;border-radius:50px;background-image:url('https://badges.strava.com/logo-strava-echelon.png');background-size:25px;transition:all 0.3s;font-weight:600;box-shadow:0 5px 15px rgba(252, 82, 0, 0.3);" href='https://strava.com/athletes/125322076' target="_blank" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 10px 25px rgba(252, 82, 0, 0.4)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 5px 15px rgba(252, 82, 0, 0.3)'">
+                <a class="btn-strava" href='https://strava.com/athletes/125322076' target="_blank">
                     Follow me on
                     <img src='https://badges.strava.com/logo-strava.png' alt='Strava' style='margin-left:5px;vertical-align:middle' height=18 width=70 />
                 </a>
@@ -228,12 +228,11 @@
                 <h3>English</h3>
                 <p>Fluent</p>
             </div>
-        <div class="languages-grid">
             <div class="language-card">
                 <div class="flag">DE</div>
                 <h3>German</h3>
                 <p>Basic</p>
-              </div>
+            </div>
         </div>
     </section>
 
