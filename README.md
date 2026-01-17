@@ -1,42 +1,66 @@
-# Windows CMD Sheet
+# Mohamad Malek Albeik - Personal Portfolio Website
 
-A modern, offline-ready reference for Windows Command Prompt commands. Designed for beginners and power users, featuring a responsive interface, dark mode, and instant search.
+This is my personal portfolio website, built from scratch to showcase my skills, professional experience, and personal projects. It's a fully responsive single-page application with a modern dark theme and several interactive features.
 
-![Project Status](https://img.shields.io/badge/status-active-success.svg)
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
+**[➡️ View Live Demo](https://mohamad-albeik.github.io/portfolio-website-main/)**
+
+![Portfolio Screenshot](https://user-images.githubusercontent.com/username/repo/screenshot.png) 
+*(Note: You can replace the link above with a screenshot of your website)*
+
+---
 
 ## ✨ Features
 
-* **Dynamic Search:** Instantly filter commands by name, description, or keywords (debounced for performance).
-* **Dark/Light Mode:** Automatically respects system preferences but can be toggled manually. Persists via LocalStorage.
-* **Zero Dependencies:** Built with pure HTML, CSS, and Vanilla JavaScript.
-* **Data Driven:** All content is rendered dynamically from a JSON file, making updates easy.
-* **Developer Friendly:**
-    * Syntax highlighting for commands.
-    * "Copy to Clipboard" functionality.
-    * Visual terminal previews for output.
+This portfolio is more than just a static page. It includes several features designed to create a polished and engaging user experience:
 
-## 🚀 Live Demo
+- **Modern & Responsive Design:** Built with CSS Flexbox and Grid, the layout adapts beautifully to all screen sizes, from mobile phones to widescreen desktops.
+- **Interactive UI with Sound:** Subtle hover and click sound effects are implemented using JavaScript for a unique and responsive feel.
+- **Smooth Scrolling:** Navigation links provide a smooth scrolling experience between sections.
+- **Dynamic Copyright Year:** The copyright year in the footer is automatically updated using JavaScript, so it's always current.
+- **AJAX Contact Form:** The contact form uses Formspree and is submitted via an AJAX call, preventing page reloads and displaying a success message dynamically.
+- **Scroll Animations:** Elements and cards gracefully fade into view as you scroll down the page, thanks to the Intersection Observer API.
+- **Clean & Organized Code:** The project follows best practices by separating HTML structure, CSS styling, and JavaScript functionality.
 
-You can view the fully functional project live in your browser here:
+---
 
-🔗 **[https://mohamad-albeik.github.io/Windows-CMD/](https://mohamad-albeik.github.io/Windows-CMD/)**
+## 🛠️ Built With
 
-*(Note: If you clone this repository, you cannot simply double-click `index.html` to run it due to browser security settings. Please use the live link above unless you are setting up a local server.)*
+The portfolio was built using a combination of core web technologies and modern tools:
 
-## 🛠️ Tech Stack
+- **HTML5:** For the structure and content of the website.
+- **CSS3:** For all styling, including the dark theme, layout, and animations.
+- **JavaScript (ES6+):** For all interactive functionality, including sound effects, form submission, and scroll animations.
+- **[Font Awesome](https://fontawesome.com/):** For scalable vector icons used throughout the site.
+- **[Formspree](https://formspree.io/):** As the backend service for the contact form.
+- **[GitHub Pages](https://pages.github.com/):** For hosting the live version of the website.
 
-* **HTML5:** Semantic structure.
-* **CSS3:** CSS Variables for theming, Flexbox/Grid for layout.
-* **JavaScript (ES6+):** Async/Await for data fetching, DOM manipulation.
-* **JSON:** Structured data storage for commands.
 
-## 📂 Project Structure
 
-```text
-├── data.json       # Contains all command data, icons, and examples
-├── index.html      # Main entry point
-├── script.js       # Logic for rendering, search, theming, and interactions
-├── style.css       # Styling and dark/light mode definitions
-├── header-bg.jpg   # Background asset
-└── README.md       # Project documentation
+3. **Open the website:**
+   Simply open the `index.html` file in your web browser.
+   Or click on the link https://mohamad-albeik.github.io/portfolio-website/)
+
+---
+
+## 🔧 Customization
+
+You can easily customize this portfolio for your own use:
+
+1.  **Content:** All text content, including your name, experience, and project details, can be edited directly in `index.html`.
+2.  **Styling:** Colors, fonts, and spacing can be modified in the `style.css` file.
+3.  **Images & CV:** Replace `my-photo.png`, `my-running-photo.jpg`, and `Mohamad-Albeik-CV.pdf` with your own files.
+4.  **Favicons:** Generate your own set of favicons using a tool like RealFaviconGenerator and replace the existing icon files.
+5.  **Contact Form:** To receive messages from the contact form, create your own Formspree endpoint and replace the URL in the `action` attribute of the form in `index.html` and in the `fetch` call within `script.js`.
+
+---
+
+## 📞 Contact
+
+Mohamad Malek Albeik
+
+- **LinkedIn:** linkedin.com/in/mohamad-malek-albeik
+- **Website:** mohamad-albeik.github.io/portfolio-website-main/
+
+---
+
+*This project was built with passion and continuous learning.*
