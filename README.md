@@ -4,7 +4,7 @@ This is my personal portfolio website, built from scratch to showcase my skills,
 
 **[➡️ View Live Demo](https://mohamad-albeik.github.io/portfolio-website/)**
 
-![Portfolio Screenshot] <img width="1283" height="759" alt="image" src="https://github.com/user-attachments/assets/082fe2d8-0390-49da-aa71-0f655bd1714d" />
+<img width="1283" height="759" alt="image" src="https://github.com/user-attachments/assets/082fe2d8-0390-49da-aa71-0f655bd1714d" />
 
 
 ---
@@ -64,5 +64,6 @@ Mohamad Malek Albeik
 ---
 
 *This project was built with passion and continuous learning.*
+
 
 
